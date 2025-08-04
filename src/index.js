@@ -1,7 +1,7 @@
 import express from "express"
 import dotenv from "dotenv"
 import connectDB from "./config/database.js"
-// import tmpRoutes from "./routes/tmp.route.js"
+import shipRoutes from "./routes/shipments.route.js"
 
 dotenv.config({ path: './.env' })
 const app = express()
@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-// app.use("/api/v1/tmp", tmpRoutes);
+app.use("/api/shipments/", shipRoutes)
 
 
 app.get("/", (req, res) => {
