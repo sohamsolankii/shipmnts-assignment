@@ -10,7 +10,7 @@ const PORT = process.env.PORT;
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-app.use("/api/shipments/", shipRoutes)
+app.use("/shipments/", shipRoutes)
 
 
 app.get("/", (req, res) => {
